@@ -11,6 +11,8 @@ COPY . .
 
 RUN yarn build
 
+RUN apk add curl
+
 HEALTHCHECK --start-period=30s \
   CMD curl -f http://localhost:3000 || exit 1
 
